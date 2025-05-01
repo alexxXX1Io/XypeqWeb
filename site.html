@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>хурей | візитка</title>
+
+  <!-- Додаємо фавікон -->
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #bb86fc;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .video-wrapper {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 3px solid #bb86fc;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .links a {
+      text-decoration: none;
+      background: #1e1e1e;
+      color: #bb86fc;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+      border: 1px solid #bb86fc44;
+    }
+
+    .links a:hover {
+      background: #292929;
+      transform: scale(1.03);
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-wrapper">
+    <video autoplay loop muted>
+      <source src="avatar.mp4" type="video/mp4">
+      Твоє відео не підтримується.
+    </video>
+  </div>
+  <h1>Хурей</h1>
+  <p>привіт, мої займенники він/його, програмую телеґрам ботів на пайтон та граю в ігри на стім іноді:)</p>
+  <div class="links">
+    <a href="https://t.me/Xypeq" target="_blank">Telegram</a>
+    <a href="https://steamcommunity.com/id/Xypeq/" target="_blank">Steam</a>
+    <a href="https://linktr.ee/xypeq" target="_blank">Linktree</a>
+  </div>
+  <div class="footer">coded by Хурей 💻</div>
+</body>
+</html>
