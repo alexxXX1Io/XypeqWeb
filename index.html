@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="906b8130-4a01-4452-9721-354fdfa0fd07"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Хурей | візитівка</title>
+  
+
+  <!-- Додаємо фавікон -->
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+  
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.2s; }
+    .fade-in-delay-2 { animation-delay: 0.4s; }
+    .fade-in-delay-3 { animation-delay: 0.6s; }
+    .fade-in-delay-4 { animation-delay: 0.8s; }
+
+    .spinner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .spinner::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border: 4px solid #bb86fc;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #bb86fc;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .video-wrapper {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 3px solid #bb86fc;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .links a {
+      text-decoration: none;
+      background: #1e1e1e;
+      color: #bb86fc;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+      border: 1px solid #bb86fc44;
+    }
+
+    .links a:hover {
+      background: #292929;
+      transform: scale(1.03);
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Для вкладки Боти */
+    .bots-section {
+      margin-top: 40px;
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+    }
+
+    .bots-section h2 {
+      color: #bb86fc;
+      margin-bottom: 20px;
+    }
+
+    .bots-section p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .bots-section a {
+      color: #bb86fc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .bots-section a:hover {
+      color: #e0e0e0;
+    }
+
+    /* Кнопка для запуску аудіо */
+    #audioButton {
+      width: 50px;
+      height: 50px;
+      background-image: url('audio.png'); /* Заміни на свою картинку */
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      position: fixed; /* Фіксуємо кнопку */
+      top: 20px; /* Відступ від верхнього краю */
+      right: 20px; /* Відступ від правого краю */
+      z-index: 1000; /* Забезпечує, що кнопка буде поверх інших елементів */
+    }
+
+    #audioButton:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="video-wrapper" id="videoContainer">
+    <div class="spinner" id="spinner"></div>
+    <video id="avatarVideo" autoplay loop muted preload="auto" style="display: none;">
+      <source src="avatar.mp4" type="video/mp4">
+    </video>
+    <img id="fallbackImage" src="favicon.png" alt="Аватарка" style="display: none; width: 100%; height: 100%; object-fit: cover;" />
+  </div>
+  <h1 class="fade-in-up fade-in-delay-1">Хурей</h1>
+  <p class="fade-in-up fade-in-delay-2">привіт, мої займенники він/його, часто слухаю хейтспіча,  програмую Телеґрам ботів на пайтон та іноді граю в ігри на стім:)</p>
+  
+  <div class="links fade-in-up fade-in-delay-3">
+    <a href="https://t.me/Xypeq" target="_blank">Telegram</a>
+    <a href="https://steamcommunity.com/id/Xypeq/" target="_blank">Steam</a>
+    <a href="https://linktr.ee/xypeq" target="_blank">Linktree</a>
+    <a href="https://www.instagram.com/xypeq123" target="_blank">Instagram</a>
+    <a href="#bots" class="bot-link">Bots</a>
+  </div>
+
+  <!-- Вкладка "Боти" -->
+  <div id="bots" class="bots-section fade-in-up fade-in-delay-4">
+    <h2>Мої Боти</h2>
+    <p>Я створюю ботів для різних цілей. Ось кілька з них:</p>
+    <p><a href="https://t.me/raterusnua_bot" target="_blank">рейтинг бот</a> — бот який дає можливість ставити рейтинги користувачам та переглядати їх.</p>
+    <p><a href="https://t.me/vttUAbot" target="_blank">vtt бот</a> — перетворює голосові в текст</p>
+    <p><a href="https://t.me/Xypeq" target="_blank">Хурей</a> — власне, я і є сам по собі бот, можете протестувати написавши !мап мені в особисті в Телеґрамі</p>
+  </div>
+
+  <div class="footer">coded by Хурей 💻</div>
+
+  <!-- Кнопка для запуску аудіо -->
+  <button id="audioButton"></button>
+
+  <audio id="bg-audio" src="htspch.mp3" autoplay loop></audio>
+
+  <script>
+    
+    const video = document.getElementById('avatarVideo');
+    const spinner = document.getElementById('spinner');
+    const fallbackImage = document.getElementById('fallbackImage');
+    const videoContainer = document.getElementById('videoContainer');
+    const audioButton = document.getElementById('audioButton');
+    const audio = document.getElementById('bg-audio');
+
+    // Ліміт часу в 3 секунди
+    const timeoutDuration = 3000;
+
+    // Функція для обробки фолбеку
+    const handleFallback = () => {
+      spinner.style.display = 'none';
+      fallbackImage.style.display = 'block';
+    };
+
+    // Таймер для запуску фолбеку, якщо відео не завантажиться за 3 секунди
+    const timeoutId = setTimeout(handleFallback, timeoutDuration);
+
+    // Перевіряємо чи браузер взагалі підтримує тег video
+    const supportsVideo = !!document.createElement('video').canPlayType;
+  
+    if (supportsVideo) {
+      video.addEventListener('canplay', () => {
+        clearTimeout(timeoutId);  // Скидаємо таймер
+        spinner.style.display = 'none';
+        video.style.display = 'block';
+      });
+
+      video.addEventListener('error', () => {
+        clearTimeout(timeoutId);  // Скидаємо таймер у випадку помилки
+        handleFallback();
+      });
+    } else {
+      // якщо відео не підтримується взагалі
+      clearTimeout(timeoutId);  // Скидаємо таймер
+      handleFallback();
+    }
+
+    // Зниження гучності, щоб не задушило відразу
+    audio.volume = 0.05;
+    audio.style.display = 'none'; // Ховаємо контролли
+
+    // Запуск аудіо після завантаження сторінки (з ініціативи користувача)
+    window.addEventListener('DOMContentLoaded', () => {
+      audioButton.style.display = 'block'; // Показуємо кнопку після завантаження
+    });
+
+  audioButton.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+      
+  </script>
+</body>
+</html>
